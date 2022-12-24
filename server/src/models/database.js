@@ -2,10 +2,10 @@ const mysql = require("mysql");
 const config = require("../database/dbConfig");
 
 var connection = mysql.createPool({
-    host: config.HOST,
-    user: config.USER,
-    password: config.PASSWORD,
-    database: config.DB,
+    host: config.host,
+    user: config.user,
+    password: config.password,
+    database: config.database,
     "typeCast": function castField(field, useDefaultTypeCasting) {
   
       // We only want to cast bit fields that have a single-bit in them. If the field
@@ -18,7 +18,6 @@ var connection = mysql.createPool({
         // Therefore, our single "bit field" comes back as the bits '0000 0001',
         // which is equivalent to the number 1.
         return (bytes[0] == 1 ? 1 : 0);
-  
       }
   
       return (useDefaultTypeCasting());

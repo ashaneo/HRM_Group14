@@ -8,8 +8,4 @@ module.exports = (app) => {
     
     app.use("/auth", router);
     
-    };
-
-    //ll
-
-    
+    };    
