@@ -7,7 +7,7 @@ const Employee = function (model) {
   };
 
   Employee.findById = (id, result) => {
-    sql.query(`SELECT * FROM employee WHERE ID = 'ID1'`, (err, res) => {
+    sql.query(`SELECT * FROM employee WHERE ID = 'ID1';`, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(err, null);
