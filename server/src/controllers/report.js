@@ -1,4 +1,4 @@
-const reportData = require('../database/reportData');
+const reportData = require('../models/reportData');
 
 const getDepartmentList = async (req,res)=>{
     departmentList = await reportData.getDepartmentList();

@@ -1,5 +1,5 @@
-const leaves = require('../database/leaves');
-const getdata = require('../database/getData');
+const leaves = require('../models/leaves');
+const getdata = require('../models/getData');
 
 const applyLeave = async (req,res)=>{
 

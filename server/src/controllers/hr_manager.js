@@ -1,8 +1,8 @@
-const db = require('../database/db_helper');
-const users = require('../database/users');
-const getData = require('../database/getData');
-const validator = require("../validation/validation");
-const setData = require("../database/setData");
+const db = require('../models/database');
+const users = require('../models/users');
+const getData = require('../models/getData');
+const validator = require("../models/validation");
+const setData = require("../models/setData");
 
 const getPaygrades = async (req,res)=>{
     const paygrades = await getData.getAllPaygrades();

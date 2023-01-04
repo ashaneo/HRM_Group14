@@ -1,5 +1,5 @@
-const users = require('../database/users');
-const getData = require('../database/getData');
+const users = require('../models/users');
+const getData = require('../models/getData');
 const validator = require("../validation/validation");
 
 const viewUser = async (req,res)=>{
@@ -10,7 +10,7 @@ const viewUser = async (req,res)=>{
             message: "User " + req.params.user_id + " found",
             data: {...user.values[0], "phone1_id": phoneNums.values[0].id, "phone1": phoneNums.values[0].phone_number, "phone2_id":phoneNums.values[1].id, "phone2":phoneNums.values[1].phone_number}
         });
-        
+
     } else {
         return res.status(400).json({
             message: "Cannot find the user"
