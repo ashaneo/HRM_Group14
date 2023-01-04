@@ -1,0 +1,13 @@
+const express = require('express');
+const hrManager = require('../controllers/hrManagerController');
+const {verifyToken}  = require("../middleware/auth");
+
+const router = express.Router();
+
+router.get("/get_leave_requests", verifyToken, hrManager.getLeaveRequests);
+router.get("/getleaveData/:emp_ID", verifyToken, hrManager.getLeaveData);
+router.post("/accept_leave/:id", verifyToken, hrManager.acceptLeave);
+router.post("/reject_leave/:id", verifyToken, hrManager.rejectLeave);
+
+
+module.exports = router;
